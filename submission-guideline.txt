@@ -1,0 +1,9 @@
+*Submission:* Submit one assignment per pair through Gradescope. Only the q1.py, q2.py, q3.py and challenge.py files need to be submitted.
+
+*How the files are structured:* Each file contains sections for you to complete marked YOUR CODE HERE. At the end of each file, there is also a block of code that runs these functions so that you can experiment with your implementation and see how it behaves. The autograder will only evaluate the functions you complete and check that they satisfy the requirements of the question; the exploratory code at the end of the file is there for you to use while working.
+
+*Code requirements:* Your submission must use only the packages already included in the provided files. The autograder will only have access to the submitted files and these permitted packages, so your code should not depend on any additional files, packages, or setup.
+
+*Grading:* To receive the mark for a question, your submission must pass all of the associated unit tests. You may resubmit as many times as you like before the deadline.
+
+*Academic integrity:* The purpose of these assignments is to give you hands-on experience writing scientific code. You may work with your assigned partner, but the code you submit should be your own work. Do not use AI tools to generate or complete your solutions. 
