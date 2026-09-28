@@ -29,7 +29,7 @@ def J_cw_lion(t,x):
     JLmax the maximum turning rate is defined globally in this file, so it can
     be accessed without passing it as an input.
     """
-    # YOUR CODE HERE
+    
     raise NotImplementedError()
 
 

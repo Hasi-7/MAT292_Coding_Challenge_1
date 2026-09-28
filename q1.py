@@ -11,14 +11,14 @@ def JL(t,x):
     The state x is unused but is included so that this function
     can be passed to lion_ante_rhs.
     """
-    # YOUR CODE HERE
+    return -t
     raise NotImplementedError()
 
 
 def JA(t,x):
     """Return the antelope's turning rate 1.
     """
-    # YOUR CODE HERE
+    return 1
     raise NotImplementedError()
 
 # Question 1(b)
@@ -32,7 +32,8 @@ def lion_ante_rhs(t,x,vL,vA,JL,JA):
 
     Return dx = [dxL,dyL,dphiL,dxA,dyA,dphiA].
     """
-    # YOUR CODE HERE
+    
+    return [vL*np.cos(JL(t, x)*t), vL*np.sin(JL(t, x)*t), JL(t, x), vA*np.cos(JA(t, x)*t), vA*np.sin(JA(t, x)*t), JA(t, x)]
     raise NotImplementedError()
 
 if __name__ == "__main__":
