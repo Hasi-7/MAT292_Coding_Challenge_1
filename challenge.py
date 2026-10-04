@@ -60,8 +60,6 @@ def J_strategy(t, x):
     Remember to obey the steering constraints from the assignment instructions.
     """
     theta = np.arctan2(x[4]-x[1], x[3]-x[0])
-    if x[2] < 0:
-        theta -= np.pi/4
     wrap = ((theta - x[5] + np.pi)%(2*np.pi)) - np.pi
     steering_rate = wrap
     JAmax = 2
