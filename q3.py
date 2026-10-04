@@ -24,9 +24,9 @@ max_step = 0.0005
 # Question 3(a)
 def collision_event(t,x):
     """Return separation minus the capture radius."""
-    # YOUR CODE HERE
+    return np.sqrt(pow(np.abs(x[0] - x[3]), 2) + pow(np.abs(x[1]- x[4]), 2)) - r_collision
     raise NotImplementedError()
-    
+
 collision_event.terminal  = True
 
 

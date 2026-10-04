@@ -27,7 +27,7 @@ from q3 import collision_event as q3_collision_event, r_collision as q3_r_collis
 import utils
 
 
-TEAM = "" # Enter "lion" or "antelope". This is based on your student ID, see assignment PDF.
+TEAM = "antelope" # Enter "lion" or "antelope". This is based on your student ID, see assignment PDF.
 TEAMNAME = "" # Enter a nickname for your team. The leaderboard will show this nickname, not your real name(s).
 max_step    = 0.0005
 Tmax        = 10
@@ -59,7 +59,18 @@ def J_strategy(t, x):
         t = time,
     Remember to obey the steering constraints from the assignment instructions.
     """
-    # YOUR CODE HERE
+    theta = np.arctan2(x[4]-x[1], x[3]-x[0])
+    if x[2] < 0:
+        theta -= np.pi/4
+    wrap = ((theta - x[5] + np.pi)%(2*np.pi)) - np.pi
+    steering_rate = wrap
+    JAmax = 2
+    if (wrap < -JAmax):
+        steering_rate = -JAmax
+    elif (wrap > JAmax):
+        steering_rate = JAmax
+        
+    return steering_rate
     raise NotImplementedError()
 
 def simulator(JL, JA):

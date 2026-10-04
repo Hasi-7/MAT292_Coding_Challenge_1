@@ -29,7 +29,15 @@ def J_cw_lion(t,x):
     JLmax the maximum turning rate is defined globally in this file, so it can
     be accessed without passing it as an input.
     """
-    
+
+    theta = np.arctan2(x[4]-x[1], x[3]-x[0])
+    wrap = ((theta - x[2] + np.pi)%(2*np.pi)) - np.pi
+    steering_rate = wrap
+    if (wrap < -JLmax):
+        steering_rate = -JLmax
+    elif (wrap > JLmax):
+        steering_rate = JLmax
+    return steering_rate
     raise NotImplementedError()
 
 
@@ -37,7 +45,16 @@ def J_cw_lion(t,x):
 def J_cw_ante(t,x):
     """Use clip-wrap steering to turn the antelope counter-clockwise
     perpendicular to vector from lion to antelope."""
-    # YOUR CODE HERE
+
+    theta = np.arctan2(x[4]-x[1], x[3]-x[0]) + np.pi/2
+    wrap = ((theta - x[5] + np.pi)%(2*np.pi)) - np.pi
+    steering_rate = wrap
+    if (wrap < -JAmax):
+        steering_rate = -JAmax
+    elif (wrap > JAmax):
+        steering_rate = JAmax
+    return steering_rate
+
     raise NotImplementedError()
 
 # Question 2(c)

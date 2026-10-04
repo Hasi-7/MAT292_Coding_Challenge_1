@@ -33,7 +33,7 @@ def lion_ante_rhs(t,x,vL,vA,JL,JA):
     Return dx = [dxL,dyL,dphiL,dxA,dyA,dphiA].
     """
     
-    return [vL*np.cos(JL(t, x)*t), vL*np.sin(JL(t, x)*t), JL(t, x), vA*np.cos(JA(t, x)*t), vA*np.sin(JA(t, x)*t), JA(t, x)]
+    return [vL*np.cos(x[2]), vL*np.sin(x[2]), JL(t, x), vA*np.cos(x[5]), vA*np.sin(x[5]), JA(t, x)]
     raise NotImplementedError()
 
 if __name__ == "__main__":
